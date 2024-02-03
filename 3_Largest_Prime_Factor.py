@@ -1,22 +1,12 @@
-import math
-
-
-def isPrime(num):
-    for i in range(2, num):
-        if num % i == 0:
-            return False
-    return True
-
-
-def primeFactor(num):
+def primeFactor(number):
     largest = 1
-    c = num
+    num = number
     i = 2
 
-    while c > 1:
-        if c % i == 0:
+    while num > 1 and i < num:
+        if num % i == 0:
             largest = i
-            c = c // i
+            num = num // i
         i += 1
     return largest
 
@@ -24,7 +14,7 @@ def primeFactor(num):
 # 13195
 # 600851475143
 
-num = 13195
+num = 124
 print(primeFactor(num))
 
 num = 600851475143
